@@ -1,0 +1,8 @@
+.EmpetyTodo--h1{
+    width: 90vw;
+    height: 50vh;
+    color: #fff;
+    display: grid;
+    place-content: center;
+    font-size: 5.8rem;
+}
