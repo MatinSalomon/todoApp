@@ -17,10 +17,6 @@ export function AppUI(){
   const {
     loading,
     error,
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
     searchedTodos,
     completeTodo,
     deleteTodo,
@@ -40,7 +36,7 @@ export function AppUI(){
 
               {loading && <TodoLoading />}
               {error && <TodoError />}
-              {(!loading && searchedTodos == 0) && <EmpetyTodo />}
+              {(!loading && searchedTodos === 0) && <EmpetyTodo />}
 
               {searchedTodos.map(todo => (
                 <TodoItem 
