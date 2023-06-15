@@ -25,7 +25,7 @@ export function TodoForm() {
         <form onSubmit={onSubmit}>
             <label>Escribe tu nuevo todo</label>
             <textarea
-                placeholder="bañarme XD"
+                placeholder="Ir al gimnasio"
                 value={newTodoValue}
                 onChange={onChange}
             />
