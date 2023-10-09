@@ -36,7 +36,7 @@ export function AppUI(){
 
               {loading && <TodoLoading />}
               {error && <TodoError />}
-              {(!loading && searchedTodos === 0) && <EmpetyTodo />}
+              {(!loading && searchedTodos == 0) && <EmpetyTodo />}
 
               {searchedTodos.map(todo => (
                 <TodoItem 
