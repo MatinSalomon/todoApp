@@ -1,12 +1,12 @@
 .CreateTodoButton{
-    height: 70px;
-    width: 70px;
     z-index: 2;
     position: fixed;
-    font-size: 50px;
+    font-size: 1.8rem;
     text-align: center;
     top: 90vh;
-    left: 75vw;
+    left: 85vw;
+    height: 40px;
+    width: 40px;
     background-color:#62dddd;
     border: solid #53ecec 2px;
     border-radius: 100%;
@@ -16,9 +16,3 @@
 .CreateTodoButton:hover{
     cursor: pointer;
 }
-
- @media (min-width: 520px) {
-    .CreateTodoButton{
-        left: 87vw;
-    }
- }

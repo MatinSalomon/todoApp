@@ -3,18 +3,15 @@
     justify-content: center;
 }
 .div--TodoSearch input{
-    width: 70vw;
-    height: 3vh;
+    width: 60vw;
     background-color: #53ecec;
     border: solid #62dddd 2px;
     border-radius: 7px;
     padding: 5px 0px;
-    font-size: 1.6rem;
     text-align: center;
     color: #fff;
 }
 .div--TodoSearch input:focus{
-
     outline-color:#53ecec;
 }
 
