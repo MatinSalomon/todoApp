@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eef66b1cac0ab6610a61c548050f94f1",
+    "revision": "5743fd153fff1659976f4ea8f4cd1d00",
     "url": "/curso-react-intro/index.html"
   },
   {
-    "revision": "029e46b0f95f7fec125b",
-    "url": "/curso-react-intro/static/css/main.4080c7dd.chunk.css"
+    "revision": "b840c4660c7ab2c9519d",
+    "url": "/curso-react-intro/static/css/main.9734a5c1.chunk.css"
   },
   {
     "revision": "a122c5d1de6df0c84187",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/curso-react-intro/static/js/2.982bc7fd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "029e46b0f95f7fec125b",
+    "revision": "b840c4660c7ab2c9519d",
     "url": "/curso-react-intro/static/js/main.abc8cf7a.chunk.js"
   },
   {
