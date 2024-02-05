@@ -1,14 +1,13 @@
-.TodoItem {
-    width: 90%;
+/* .TodoItem {
+    width: 100%;
     height: auto;
     margin: 0% auto;
-    background-color: #4db6b6;
+    background-color: var(--color-very-dark-desaturated-blue);
     border-radius: 10px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 24px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
   }
   
@@ -21,4 +20,4 @@
   }
   .TodoItem-p--complete {
     text-decoration: line-through;
-  }
+  } */

@@ -1,63 +1,122 @@
-import { TodoCounter } from '../TodoCounter/TodoCounter';
-import { TodoItem } from '../TodoItem/TodoItem'; 
-import {TodoSearch} from '../TodoSearch/TodoSearch'
-import { TodoList } from '../TodoList/TodoList';
-import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton.js';
-import { TodoLoading } from '../TodoLoading/TodoLoading';
-import { TodoError } from '../TodoError/TodoError'
-import { EmpetyTodo } from '../EmpetyTodo/EmpetyTodo'
-import { TodoContext } from '../TodoContext';
-import { Modal } from '../Modal';
-import { TodoForm } from '../TodoForm';
+import { Header } from '../Header/index.js';
+import { TodoItem } from '../TodoItem/TodoItem.js'; 
+import { TodoList } from '../TodoList/TodoList.js';
+import { TodoLoading } from '../TodoLoading/TodoLoading.js';
+import { TodoError } from '../TodoError/TodoError.js'
+import { TodoContext } from '../TodoContext/index.js';
+import { TodoForm } from '../TodoForm/index.js';
+import { TodoFilter } from '../TodoFilter/index.js';
+import './style.css'
 import React from 'react';
 
 
 
 export function AppUI(){
+
+
   const {
-    loading,
-    error,
-    searchedTodos,
+    // loading,
+    // error,
+    // renderTodos, 
+    renderAllTodos,
+    setRenderAllTodos,
+    renderActiveTodos,
+    setRenderActiveTodos,
+    renderCompletedTodos,
+    setRenderCompletedTodos,
+    allTodos,
+    activeTodos,
+    completedTodos,
+    leftTodos,
     completeTodo,
     deleteTodo,
-    openModal,
+    darkMode,
+    setDarkMode,
+    deletedCompletedTodos,
+    
 } = React.useContext(TodoContext)
 
 
+
+
+const handleDarkMode = () => {
+  setDarkMode(!darkMode)
+}
+
+
+
     return (
-        <> 
-          <TodoCounter />
-    
-          <TodoSearch 
-          />
-    
-          
-              <TodoList>
+        <div className={ `wrapper ${darkMode ? 'dark-mode' : 'light-mode'}`}> 
 
-              {loading && <TodoLoading />}
-              {error && <TodoError />}
-              {(!loading && searchedTodos == 0) && <EmpetyTodo />}
-
-              {searchedTodos.map(todo => (
-                <TodoItem 
-                  text={todo.text}
-                  key={todo.text}
-                  completed={todo.completed}
-                  onCompleted={() => completeTodo(todo.text)}
-                  onDelete={() => deleteTodo(todo.text)}
-                />
-              ))}
-
-            </TodoList>
-    
-         <CreateTodoButton /> 
+        <div className="container">
+              <Header 
+                handleDarkMode={handleDarkMode}
+                darkMode={darkMode}
+              />
+              <TodoForm 
+                darkMode={darkMode}
+              />
 
 
-         {openModal && (
-         <Modal>
-            <TodoForm />
-         </Modal>
-         )}
-        </>
+
+              <TodoList
+              darkMode={darkMode}
+              >
+
+
+
+                 {renderAllTodos && 
+                    allTodos.map(todo => (
+                      <TodoItem 
+                        text={todo.text}
+                        key={todo.text}
+                        completed={todo.completed}
+                        onCompleted={() => completeTodo(todo.text)}
+                        onDelete={() => deleteTodo(todo.text)}
+                        darkMode={darkMode}
+                      />  
+                  ))}
+
+                {renderActiveTodos && 
+                    activeTodos.map(todo => (
+                      <TodoItem 
+                        text={todo.text}
+                        key={todo.text}
+                        completed={todo.completed}
+                        onCompleted={() => completeTodo(todo.text)}
+                        onDelete={() => deleteTodo(todo.text)}
+                        darkMode={darkMode}
+                      />  
+                  ))}
+
+                  {renderCompletedTodos && 
+                    completedTodos.map(todo => (
+                      <TodoItem 
+                        text={todo.text}
+                        key={todo.text}
+                        completed={todo.completed}
+                        onCompleted={() => completeTodo(todo.text)}
+                        onDelete={() => deleteTodo(todo.text)}
+                        darkMode={darkMode}
+                      />  
+                  ))}
+                  
+                  
+                  
+                  <TodoFilter
+                  renderAllTodos={renderAllTodos}
+                  renderActiveTodos={renderActiveTodos}
+                  renderCompletedTodos={renderCompletedTodos}
+                  completedTodos={completedTodos}
+                  setRenderAllTodos={setRenderAllTodos}
+                  setRenderActiveTodos={setRenderActiveTodos}
+                  setRenderCompletedTodos={setRenderCompletedTodos}
+                  leftTodos={leftTodos}
+                  deletedCompletedTodos={deletedCompletedTodos}
+                  />
+              </TodoList>
+            </div>
+          </div>
+  
       );
 }

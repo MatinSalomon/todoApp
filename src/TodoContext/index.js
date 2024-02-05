@@ -4,6 +4,8 @@ import { useLocalStorage } from "./useLocalStorage";
 export const TodoContext = React.createContext()
 
 
+
+
 export function TodoProvider({children}){
     const {
         item: todos,
@@ -12,19 +14,19 @@ export function TodoProvider({children}){
         error,
       } = useLocalStorage('TODOS_V1', [])
        
+
       const [searchValue  , setSearchValue] = React.useState('')
-      const [openModal  , setOpenModal] = React.useState(false)
+
+      const [renderAllTodos  , setRenderAllTodos] = React.useState(true)
+      const [renderActiveTodos  , setRenderActiveTodos] = React.useState(false)
+      const [renderCompletedTodos  , setRenderCompletedTodos] = React.useState(false)
 
 
-      const completedTodos = todos.filter( todo => !!todo.completed).length
-      const totalTodos = todos.length;  
-    
-      const searchedTodos = todos.filter ( (todo) => { 
-        const todoTextLoweCase = todo.text.toLowerCase()
-        const searchValueLowerCase = searchValue.toLowerCase()
-    
-        return todoTextLoweCase.includes(searchValueLowerCase) 
-      })  
+      const completedTodos = todos.filter( todo => !!todo.completed)
+      const activeTodos = todos.filter( todo => !todo.completed)
+      const allTodos = todos 
+
+      const leftTodos = todos.filter(todo => !todo.completed).length;  
     
     
       const completeTodo = (text) => {
@@ -52,20 +54,40 @@ export function TodoProvider({children}){
         saveTodos(newArrayTodos)
       }
 
+      const deletedCompletedTodos = () => {
+        const newArrayTodos = [...todos]
+        const deletedCompletedTodos = newArrayTodos.filter(todo => todo.completed === false)
+        saveTodos(deletedCompletedTodos)
+      }
+
+
+      
+    const [darkMode, setDarkMode] = React.useState('false')
+
       return(
         <TodoContext.Provider value={{
           loading,
           error,
+          renderAllTodos,
+          setRenderAllTodos,
+          renderActiveTodos,
+          setRenderActiveTodos,
+          renderCompletedTodos,
+          setRenderCompletedTodos,
+          allTodos,
           completedTodos,
-          totalTodos,
+          leftTodos,
+          activeTodos,
           searchValue,
           setSearchValue,
-          searchedTodos,
+          // renderTodos,
           completeTodo,
           deleteTodo,
-          openModal,
-          setOpenModal,
           addTodo,
+          darkMode,
+          setDarkMode,
+          deletedCompletedTodos,
+
             }}>
             {children}
         </TodoContext.Provider>

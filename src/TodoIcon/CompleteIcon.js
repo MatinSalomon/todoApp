@@ -3,10 +3,16 @@ import { TodoIcon } from './TodoIcon.js'
 
 export function CompleteIcon({completed , onCompleted}) {
     return(
-        <TodoIcon 
+
+        <span 
+            className={`checkbox ${completed ? 'completed' : ''}`}
             type={'check'}
-            color={completed ? 'green' : 'gray'}
             onClick={onCompleted}
-        />
+        >
+           {completed ? <img src="https://i.imgur.com/3nz27pG.png" alt="checkmark" /> : ''}
+
+      </span>
+
+       
     )
 }
