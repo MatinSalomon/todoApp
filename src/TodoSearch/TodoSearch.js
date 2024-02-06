@@ -1,5 +1,4 @@
 import { TodoContext } from "../TodoContext"
-import "./TodoSearch.css"
 import React from "react"
 
 export function TodoSearch(){

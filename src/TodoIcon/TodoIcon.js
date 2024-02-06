@@ -1,5 +1,4 @@
 import React from "react"
-import './TodoIcon.css'
 import { FaCheck as CheckSvg }  from "react-icons/fa";
 import { IoCloseSharp as DeleteIcon} from "react-icons/io5";
 

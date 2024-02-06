@@ -61,6 +61,7 @@ html {
 .container{
     width: 54rem;
     margin: -3% auto;
+    margin-bottom: 4.8rem;
 }
 .header{
     display: flex;
@@ -131,15 +132,23 @@ html {
     width: 100%;
     height: 100%;
     border-radius: 1rem;
+    
 }
 
 .Todo-List-dark{
     background-color: var(--color-very-dark-desaturated-blue);
+    box-shadow: -1px 5px 20px 10px rgba(37, 39, 60, 0.2);
 }
-
+.Todo-List-dark li{
+    border-bottom: 0.1rem solid var(--color-dark-very-dark-grayish-blue-hover);
+}
 
 .Todo-List-light{
     background-color: var(--color-very-light-gray);
+    box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+}
+.Todo-List-light li{
+    border-bottom: 0.1rem solid var(--color-very-light-grayish-blue);
 }
 
 .TodoItem {
@@ -150,8 +159,6 @@ html {
     display: flex;
     padding-left: 2rem;
     align-items: center;
-    border-bottom: 0.1rem solid var(--color-very-light-grayish-blue);
-    border-bottom-color: var(--color-dark-very-dark-grayish-blue-hover);
 }
   
 .TodoItem-p {
@@ -220,4 +227,74 @@ html {
 
 .clear-completed-btn:hover {
     color: var(--color-dark-very-dark-grayish-blue-hover);
+}
+.control-btn-mobile{
+    display: none;
+}
+
+footer{
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* start mobile */
+
+@media (max-width: 600px){
+
+    .dark-mode{
+        background-image: url(https://i.imgur.com/y9m0sge.jpeg);
+    }
+    
+    .light-mode{
+        background-image: url(https://i.imgur.com/e4m0pN7.jpeg);
+    }
+
+    .container{
+        width: 90%;
+    }
+
+    .todo-count{
+        margin-right: 50px
+    }
+
+    .control-btn{
+        display: none;
+    }
+    
+    .control-btn-mobile{
+        display: flex;
+        justify-content: center;
+        margin: -3% auto;
+        border-radius: 1rem;
+        padding: 2.4rem;
+        margin-top: 30px;
+        margin-bottom: 4.8rem;
+        
+    }
+
+    .dark-mode .control-btn-mobile{
+        background-color: var(--color-very-dark-desaturated-blue);
+        box-shadow: -1px 5px 20px 10px rgba(37, 39, 60, 0.2);
+    }
+    .light-mode .control-btn-mobile{
+        background-color: var(--color-very-light-gray);;
+        box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+    }
+
+    .control-btn-mobile button{
+        border: none;
+        background: transparent;
+        color: var(--color-dark-dark-grayish-blue);
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .control-btn-mobile button:hover{
+        color: var(--color-dark-very-dark-grayish-blue-hover);
+    }
+    
+    .control-btn-mobile .active{
+        color: var(--color-gradient-start);
+        font-weight: 700;
+    }
+
 }

@@ -1,7 +1,6 @@
 import { CompleteIcon } from '../TodoIcon/CompleteIcon'
 import { DeleteIcon } from '../TodoIcon/DeleteIcon'
 import React from "react"
-import './TodoItem.css'
 
 export function TodoItem({text, completed, onCompleted, onDelete, darkMode}) {
 
@@ -17,9 +16,9 @@ export function TodoItem({text, completed, onCompleted, onDelete, darkMode}) {
 
       <p className={`TodoItem-p ${completed ? 'TodoItem-p--complete' : '' }  ${darkMode ? 'TodoItem-p--dark' : 'TodoItem-p--lightMode'}`}>{text}</p>
       
-      <DeleteIcon 
+      {/* <DeleteIcon 
         onDelete={onDelete}
-      />
+      /> */}
 
     </li>
     );

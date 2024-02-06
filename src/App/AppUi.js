@@ -6,6 +6,8 @@ import { TodoError } from '../TodoError/TodoError.js'
 import { TodoContext } from '../TodoContext/index.js';
 import { TodoForm } from '../TodoForm/index.js';
 import { TodoFilter } from '../TodoFilter/index.js';
+import { TodoFilterMobile } from '../TodoFilterMobile/index.js';
+import { Footer } from '../Footer/index.js';
 import './style.css'
 import React from 'react';
 
@@ -114,8 +116,23 @@ const handleDarkMode = () => {
                   leftTodos={leftTodos}
                   deletedCompletedTodos={deletedCompletedTodos}
                   />
+
               </TodoList>
+
+              <TodoFilterMobile
+              renderAllTodos={renderAllTodos}
+              renderActiveTodos={renderActiveTodos}
+              renderCompletedTodos={renderCompletedTodos}
+              completedTodos={completedTodos}
+              setRenderAllTodos={setRenderAllTodos}
+              setRenderActiveTodos={setRenderActiveTodos}
+              setRenderCompletedTodos={setRenderCompletedTodos}
+              leftTodos={leftTodos}
+              deletedCompletedTodos={deletedCompletedTodos}
+              />
             </div>
+
+            <Footer/>
           </div>
   
       );
