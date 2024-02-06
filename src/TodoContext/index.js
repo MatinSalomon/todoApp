@@ -10,8 +10,6 @@ export function TodoProvider({children}){
     const {
         item: todos,
         saveItem: saveTodos,
-        loading, 
-        error,
       } = useLocalStorage('TODOS_V1', [])
        
 
@@ -66,8 +64,6 @@ export function TodoProvider({children}){
 
       return(
         <TodoContext.Provider value={{
-          loading,
-          error,
           renderAllTodos,
           setRenderAllTodos,
           renderActiveTodos,
@@ -80,7 +76,6 @@ export function TodoProvider({children}){
           activeTodos,
           searchValue,
           setSearchValue,
-          // renderTodos,
           completeTodo,
           deleteTodo,
           addTodo,

@@ -1,8 +1,6 @@
 import { Header } from '../Header/index.js';
 import { TodoItem } from '../TodoItem/TodoItem.js'; 
 import { TodoList } from '../TodoList/TodoList.js';
-import { TodoLoading } from '../TodoLoading/TodoLoading.js';
-import { TodoError } from '../TodoError/TodoError.js'
 import { TodoContext } from '../TodoContext/index.js';
 import { TodoForm } from '../TodoForm/index.js';
 import { TodoFilter } from '../TodoFilter/index.js';
@@ -17,9 +15,6 @@ export function AppUI(){
 
 
   const {
-    // loading,
-    // error,
-    // renderTodos, 
     renderAllTodos,
     setRenderAllTodos,
     renderActiveTodos,
@@ -35,7 +30,6 @@ export function AppUI(){
     darkMode,
     setDarkMode,
     deletedCompletedTodos,
-    
 } = React.useContext(TodoContext)
 
 
